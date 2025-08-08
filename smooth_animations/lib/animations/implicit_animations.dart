@@ -12,13 +12,17 @@ class _ImplicitAnimationState extends State<ImplicitAnimation> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 500),
-      height: valueChanger ? 50 : 150,
-      width: valueChanger ? 150 : 50,
-      decoration: BoxDecoration(
-        color: valueChanger ? Colors.amberAccent : Colors.lightBlue,
-        borderRadius: BorderRadius.circular(valueChanger ? 40 : 20),
+    return Scaffold(
+      body: Center(
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 500),
+          height: valueChanger ? 50 : 150,
+          width: valueChanger ? 150 : 50,
+          decoration: BoxDecoration(
+            color: valueChanger ? Colors.amberAccent : Colors.lightBlue,
+            borderRadius: BorderRadius.circular(valueChanger ? 40 : 20),
+          ),
+        ),
       ),
     );
   }
