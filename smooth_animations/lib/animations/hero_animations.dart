@@ -52,14 +52,17 @@ class DestScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Hero(
-                tag: 'heroTag',
-                child: Container(
-                  height: 50,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.amberAccent,
-                    borderRadius: BorderRadius.circular(40),
+              GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Hero(
+                  tag: 'heroTag',
+                  child: Container(
+                    height: 50,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.amberAccent,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
                   ),
                 ),
               ),
