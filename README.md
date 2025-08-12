@@ -12,7 +12,7 @@
 
 #### 2. [Smooth as Butter: Building Beautiful Animations in Flutter](https://github.com/yashas-hm/talks/tree/main/smooth_animations)
 
-#### 3. [AI on the Edge: On-Device Machine Learning with Flutter & TensorFlow Lite](https://github.com/yashas-hm/talks/tree/main/ai_on_edge)
+#### 3. [AI on the Edge: On-Device Machine Learning with Flutter & TensorFlow Lite](https://github.com/yashas-hm/talks/tree/main/ai_on_edge) (Coming Soon!)
 
 ### 📫 How to reach me:
 
