@@ -1,0 +1,28 @@
+name: object_classifier
+description: "Simple Object Detection with tf_lite"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  auto_size_text: ^3.0.0
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^3.0.3
+  flutter_svg: ^2.2.2
+  gap: ^3.0.1
+  http: ^1.6.0
+  intl: ^0.20.2
+  resize: ^1.0.0
+  share_plus: ^12.0.1
+  shared_preferences: ^2.5.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

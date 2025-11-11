@@ -1,6 +1,6 @@
 # AI on the Edge: On-Device Machine Learning with Flutter & TensorFlow Lite
 
-What if your app could recognize images, process voice commands, or detect gestures — all without sending data to the
+What if your app could recognize images, process voice commands, or detect gestures, all without sending data to the
 cloud?
 
 In this talk, we’ll show you how to run real machine learning models directly on users’ devices using TensorFlow Lite
@@ -11,7 +11,7 @@ You’ll get live demos like image classification and gesture recognition, plus 
 deploying AI at the edge.
 
 Whether you’re new to ML or already experimenting, this session will equip you to add real-time, powerful AI to your
-Flutter apps — no cloud required.
+Flutter apps no cloud required.
 
 #### 📫 How to reach me:
 
