@@ -42,7 +42,13 @@ import 'package:tflite_flutter/tflite_flutter.dart';
 
 /// All the command codes that can be sent and received between [Detector] and
 /// [_DetectorServer].
-enum _Codes { init, busy, ready, detect, result }
+enum _Codes {
+  init,
+  busy,
+  ready,
+  detect,
+  result,
+}
 
 /// A command sent between [Detector] and [_DetectorServer].
 class _Command {
@@ -81,10 +87,8 @@ class Detector {
   static Future<Detector> start() async {
     final ReceivePort receivePort = ReceivePort();
     // sendPort - To be used by service Isolate to send message to our ReceiverPort
-    final Isolate isolate = await Isolate.spawn(
-      _DetectorServer._run,
-      receivePort.sendPort,
-    );
+    final Isolate isolate =
+        await Isolate.spawn(_DetectorServer._run, receivePort.sendPort);
 
     final Detector result = Detector._(
       isolate,
@@ -144,12 +148,11 @@ class Detector {
         // invoke [BackgroundIsolateBinaryMessenger.ensureInitialized].
         // ----------------------------------------------------------------------
         RootIsolateToken rootIsolateToken = RootIsolateToken.instance!;
-        _sendPort.send(
-          _Command(
-            _Codes.init,
-            args: [rootIsolateToken, _interpreter.address, _labels],
-          ),
-        );
+        _sendPort.send(_Command(_Codes.init, args: [
+          rootIsolateToken,
+          _interpreter.address,
+          _labels,
+        ]));
       case _Codes.ready:
         _isReady = true;
       case _Codes.busy:
@@ -247,9 +250,7 @@ class _DetectorServer {
   }
 
   Map<String, dynamic> analyseImage(
-    image_lib.Image? image,
-    int preConversionTime,
-  ) {
+      image_lib.Image? image, int preConversionTime) {
     var conversionElapsedTime =
         DateTime.now().millisecondsSinceEpoch - preConversionTime;
 
@@ -266,10 +267,13 @@ class _DetectorServer {
     // Creating matrix representation, [300, 300, 3]
     final imageMatrix = List.generate(
       imageInput.height,
-      (y) => List.generate(imageInput.width, (x) {
-        final pixel = imageInput.getPixel(x, y);
-        return [pixel.r, pixel.g, pixel.b];
-      }),
+      (y) => List.generate(
+        imageInput.width,
+        (x) {
+          final pixel = imageInput.getPixel(x, y);
+          return [pixel.r, pixel.g, pixel.b];
+        },
+      ),
     );
 
     var preProcessElapsedTime =
@@ -290,6 +294,7 @@ class _DetectorServer {
     // Classes
     final classesRaw = output.elementAt(1).first as List<double>;
     final classes = classesRaw.map((value) => value.toInt()).toList();
+    
 
     // Scores
     final scores = output.elementAt(2).first as List<double>;
@@ -300,7 +305,7 @@ class _DetectorServer {
 
     final List<String> classification = [];
     for (var i = 0; i < numberOfDetections; i++) {
-      classification.add(_labels![classes[i]]);
+      classification.add(_labels![classes[i]+1]);
     }
 
     /// Generate recognitions
@@ -312,7 +317,9 @@ class _DetectorServer {
       var label = classification[i];
 
       if (score > confidence) {
-        recognitions.add(Recognition(i, label, score, locations[i]));
+        recognitions.add(
+          Recognition(i, label, score, locations[i]),
+        );
       }
     }
 
@@ -335,7 +342,9 @@ class _DetectorServer {
   }
 
   /// Object detection main function
-  List<List<Object>> _runInference(List<List<List<num>>> imageMatrix) {
+  List<List<Object>> _runInference(
+    List<List<List<num>>> imageMatrix,
+  ) {
     // Set input tensor [1, 300, 300, 3]
     final input = [imageMatrix];
 
