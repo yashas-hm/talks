@@ -1,4 +1,4 @@
-package dev.yashashm.objectclassifier.object_classifier
+package dev.yashashm.object_classifier
 
 import io.flutter.embedding.android.FlutterActivity
 
