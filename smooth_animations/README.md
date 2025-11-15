@@ -17,7 +17,7 @@ animate with confidence, whether you’re new to Flutter or looking to level up 
 GDG Event
 Link: [Link](https://gdg.community.dev/events/details/google-gdg-chapel-hill-presents-smooth-as-butter-building-beautiful-animations-in-flutter/)<br>
 Presentation: [Link](presentation.pdf)<br>
-Youtube: [Link](https://youtu.be/pHe53BvtySk?si=gfUKRAUtrFKrZWTq)<br>
+YouTube: [Link](https://youtu.be/pHe53BvtySk?si=gfUKRAUtrFKrZWTq)<br>
 
 Rive: [Rive Flutter Docs]((https://pub.dev/packages/lottie))<br>
 Lottie: [Lottie @ pub.dev](https://pub.dev/packages/lottie)<br>

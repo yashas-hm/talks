@@ -16,7 +16,7 @@ What you’ll get:
 GDG Event
 Link: [Link](https://gdg.community.dev/events/details/google-gdg-chapel-hill-presents-build-once-run-everywhere-intro-to-flutter-dev/)<br>
 Presentation: [Link](presentation.pdf)<br>
-Youtube: [Link](https://www.youtube.com/watch?v=XVQ3QejzGxk&t=29s)<br>
+YouTube: [Link](https://www.youtube.com/watch?v=XVQ3QejzGxk&t=29s)<br>
 
 Flutter Download: [Link](https://docs.flutter.dev/get-started)<br>
 VS Code: [Link](https://code.visualstudio.com/download)<br>
