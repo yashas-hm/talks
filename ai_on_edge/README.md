@@ -13,6 +13,11 @@ deploying AI at the edge.
 Whether you’re new to ML or already experimenting, this session will equip you to add real-time, powerful AI to your
 Flutter apps no cloud required.
 
+### Important Links:
+- tflite_flutter package: https://pub.dev/packages/tflite_flutter <br>
+- convert to tf_lite: [README](./object-classifier/README.md)
+
+
 #### 📫 How to reach me:
 
 [<img src="https://raw.githubusercontent.com/yashas-hm/yashas-hm/refs/heads/main/assets/website_badge.png" height=27 alt="Website">](https://yashashm.dev)
