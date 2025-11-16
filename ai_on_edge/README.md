@@ -14,6 +14,7 @@ Whether you’re new to ML or already experimenting, this session will equip you
 Flutter apps no cloud required.
 
 ### Important Links:
+
 GDG Event
 Link: [Link](https://gdg.community.dev/events/details/google-gdg-chapel-hill-presents-north-carolina-devfest-2025/)<br>
 Presentation: [Link](presentation.pdf)<br>
@@ -22,6 +23,14 @@ YouTube: [Link]() (Coming Soon)<br>
 - tflite_flutter package: https://pub.dev/packages/tflite_flutter <br>
 - convert to tf_lite: [README](./object-classifier/README.md)
 
+### Examples
+
+<img src="./examples/ss1.jpg" width="200" alt="ss1">
+<img src="./examples/ss2.jpg" width="200" alt="ss2">
+<img src="./examples/ss3.jpg" width="200" alt="ss3">
+<img src="./examples/ss4.jpg" width="200" alt="ss4">
+<img src="./examples/ss5.jpg" width="200" alt="ss5">
+<img src="./examples/ss6.jpg" width="200" alt="ss6">
 
 #### 📫 How to reach me:
 
