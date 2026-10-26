@@ -1,0 +1,73 @@
+README.md
+  h_489c0496f9f57d 1,3,5-7,9-16,20,22,24,26-31,33-34,36-40,46,49-50
+  h_489c0496f9f57d 8,35
+"smooth_animations/simple animations/lib/animations/animation.dart"
+  h_489c0496f9f57d 5,7,9
+  h_489c0496f9f57d 14-20
+intro_to_flutter/README.md
+  h_489c0496f9f57d 1,3,5,7-8,10-12,14-16,18,20,22-39,42-58,60,62,64,67,74,76-78,84,87-90
+  h_489c0496f9f57d 21,59,75
+"smooth_animations/simple animations/pubspec.yaml"
+  h_489c0496f9f57d 19
+  h_489c0496f9f57d 3
+ai_on_edge/object-classifier/lib/core/service/detector_service.dart
+  h_489c0496f9f57d 310
+  h_489c0496f9f57d 84,91,211-216,218,238-240,254-255,257-259,261-263,276-283,287-289,291-293,306-308,313-315,323,342-344,347-349,364
+"intro_to_flutter/basic flutter app/lib/widgets/container_button.dart"
+  h_489c0496f9f57d 9
+ai_on_edge/README.md
+  h_489c0496f9f57d 1,3,5-26,29-30,32,34-37,39,41-42,44-48,50-51,53,55-64,66-77,83,86-89
+  h_489c0496f9f57d 31,65,85
+smooth_animations/README.md
+  h_489c0496f9f57d 1,3,5,7,9-25,28-34,36,38,40-45,47-51,53-66,72,75-78
+  h_489c0496f9f57d 8,52
+building_apps_like_lego/README.md
+  h_489c0496f9f57d 1-99
+ai_on_edge/object-classifier/lib/core/service/single_detector_example.dart
+  h_489c0496f9f57d 48
+  h_489c0496f9f57d 57-64,123
+ai_on_edge/object-classifier/lib/screens/live_detection_screen.dart
+  h_489c0496f9f57d 121,124-125
+  h_489c0496f9f57d 71-84,109-120,126
+ai_on_edge/object-classifier/README.md
+  h_489c0496f9f57d 1-11,25,38,42,54,69,73,79,92,140,158,167-169
+ai_on_edge/object-classifier/lib/components/box_widget.dart
+  h_489c0496f9f57d 15-16
+ai_on_edge/object-classifier/lib/components/stats_widget.dart
+  h_489c0496f9f57d 11-12
+ai_on_edge/object-classifier/lib/core/helpers/image_utils.dart
+  h_489c0496f9f57d 173,175
+ai_on_edge/object-classifier/lib/core/models/screen_params.dart
+  h_489c0496f9f57d 13
+ai_on_edge/object-classifier/lib/screens/home_screen.dart
+  h_489c0496f9f57d 34,43,50-54
+"intro_to_flutter/basic flutter app/analysis_options.yaml"
+  h_489c0496f9f57d 24-25
+"intro_to_flutter/basic flutter app/lib/core/constants/theme.dart"
+  h_489c0496f9f57d 5-38,40-73
+"intro_to_flutter/basic flutter app/lib/core/utilities/extensions.dart"
+  h_489c0496f9f57d 6-10,12-16,18-21
+"intro_to_flutter/basic flutter app/lib/screens/demo_screen.dart"
+  h_489c0496f9f57d 25-28,67-73,76-79,91-94
+"intro_to_flutter/basic flutter app/lib/screens/joke_generator.dart"
+  h_489c0496f9f57d 48-51
+"intro_to_flutter/basic flutter app/pubspec.yaml"
+  h_489c0496f9f57d 3
+"smooth_animations/simple animations/analysis_options.yaml"
+  h_489c0496f9f57d 24-25
+"smooth_animations/simple animations/lib/animations/explicit_animations.dart"
+  h_489c0496f9f57d 20-21
+"smooth_animations/simple animations/lib/animations/hero_animations.dart"
+  h_489c0496f9f57d 11-15,50-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "89f0edfbbb9d98d99c93e5194f4940622b163fbd",
+  "prompts": {},
+  "humans": {
+    "h_489c0496f9f57d": {
+      "author": "Yashas H Majmudar <yashashm.dev@gmail.com>"
+    }
+  }
+}
