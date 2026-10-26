@@ -12,8 +12,8 @@ class BoxWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // Color for bounding box
     Color color = Colors.primaries[
-        (result.label.length + result.label.codeUnitAt(0) + result.id) %
-            Colors.primaries.length];
+    (result.label.length + result.label.codeUnitAt(0) + result.id) %
+        Colors.primaries.length];
 
     return Positioned(
       left: result.renderLocation.left,

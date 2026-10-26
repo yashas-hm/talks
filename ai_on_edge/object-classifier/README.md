@@ -1,4 +1,14 @@
-# TensorFlow → TensorFlow Lite Conversion Guide (with Flutter/Dart)
+<div align="center">
+
+# 🔄 TensorFlow → TensorFlow Lite
+
+### Conversion guide (with Flutter/Dart)
+
+![TensorFlow Lite](https://img.shields.io/badge/TensorFlow_Lite-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+
+</div>
 
 This README explains how to convert a TensorFlow model into a TFLite model and how to use it inside a Flutter/Dart
 application.
@@ -12,7 +22,7 @@ use a TensorFlow model in Flutter, you convert it into a `.tflite` file using th
 
 ---
 
-# 1. Converting a TensorFlow Model to TFLite
+## 1. Converting a TensorFlow Model to TFLite
 
 You can convert from:
 
@@ -25,11 +35,11 @@ Below are all supported conversion methods.
 
 ---
 
-## Python API (Recommended)
+### Python API (Recommended)
 
 This is the standard conversion method.
 
-### Convert a SavedModel → TFLite
+#### Convert a SavedModel → TFLite
 
 ```python
 import tensorflow as tf
@@ -41,7 +51,7 @@ with open("model.tflite", "wb") as f:
     f.write(tflite_model)
 ```
 
-### Convert a Keras `.h5` → TFLite
+#### Convert a Keras `.h5` → TFLite
 
 ```python
 import tensorflow as tf
@@ -56,17 +66,17 @@ with open("model.tflite", "wb") as f:
 
 ---
 
-## Optional: Quantization for Mobile
+### Optional: Quantization for Mobile
 
 To shrink and speed up the model:
 
-### Dynamic Range Quantization
+#### Dynamic Range Quantization
 
 ```python
 converter.optimizations = [tf.lite.Optimize.DEFAULT]
 ```
 
-### Full Integer Quantization
+#### Full Integer Quantization
 
 ```python
 converter.optimizations = [tf.lite.Optimize.DEFAULT]
@@ -79,7 +89,7 @@ tflite_model = converter.convert()
 
 ---
 
-# 2. Using TFLite Models in Flutter/Dart
+## 2. Using TFLite Models in Flutter/Dart
 
 Use these packages:
 
@@ -127,7 +137,7 @@ print(output);
 
 ---
 
-# 3. TensorFlow Lite Model Maker
+## 3. TensorFlow Lite Model Maker
 
 If you want to *train* a custom model and automatically export it to `.tflite`:
 
@@ -145,7 +155,7 @@ This will output:
 
 ---
 
-# Summary
+## 📋 Summary
 
 | Tool                          | Purpose                             |
 |-------------------------------|-------------------------------------|
@@ -154,3 +164,6 @@ This will output:
 | **Model Maker**               | Train + export TFLite models easily |
 | **tflite_flutter**            | Run TFLite models in Flutter/Dart   |
 
+---
+
+<div align="center"><sub><a href="../README.md">← Back to AI on the Edge</a></sub></div>

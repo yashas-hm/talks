@@ -8,7 +8,8 @@ class StatsWidget extends StatelessWidget {
   const StatsWidget(this.left, this.right, {super.key});
 
   @override
-  Widget build(BuildContext context) => Padding(
+  Widget build(BuildContext context) =>
+      Padding(
         padding: const EdgeInsets.only(bottom: 8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

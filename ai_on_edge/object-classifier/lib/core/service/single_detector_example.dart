@@ -45,7 +45,7 @@ class ObjectDetection {
 
     // Decoding image
     final image = img.decodeImage(imageData);
-    
+
     final imageInput = img.copyResize(
       image!,
       width: 300,
@@ -54,13 +54,14 @@ class ObjectDetection {
 
     final imageMatrix = List.generate(
       imageInput.height,
-          (y) => List.generate(
-        imageInput.width,
-            (x) {
-          final pixel = imageInput.getPixel(x, y);
-          return [pixel.r, pixel.g, pixel.b];
-        },
-      ),
+          (y) =>
+          List.generate(
+            imageInput.width,
+                (x) {
+              final pixel = imageInput.getPixel(x, y);
+              return [pixel.r, pixel.g, pixel.b];
+            },
+          ),
     );
 
     final output = _runInference(imageMatrix);
@@ -119,9 +120,7 @@ class ObjectDetection {
     return img.encodeJpg(imageInput);
   }
 
-  List<List<Object>> _runInference(
-      List<List<List<num>>> imageMatrix,
-      ) {
+  List<List<Object>> _runInference(List<List<List<num>>> imageMatrix,) {
     log('Running inference...');
 
     // Set input tensor [1, 300, 300, 3]

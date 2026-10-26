@@ -45,10 +45,10 @@ class _JokeGeneratorScreenState extends State<JokeGeneratorScreen> {
             loading
                 ? CircularProgressIndicator()
                 : Text(
-                    joke,
-                    style: TextStyle(fontSize: 20),
-                    textAlign: TextAlign.center,
-                  ),
+              joke,
+              style: TextStyle(fontSize: 20),
+              textAlign: TextAlign.center,
+            ),
             SizedBox(height: 20),
             TextButton(
               onPressed: () => fetchJoke(),

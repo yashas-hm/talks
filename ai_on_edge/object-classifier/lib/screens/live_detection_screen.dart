@@ -68,20 +68,20 @@ class _LiveDetectionScreenState extends State<LiveDetectionScreen>
     cameras = await availableCameras();
     // cameras[0] for back-camera
     _cameraController =
-        CameraController(
-            cameras[0],
-            ResolutionPreset.medium,
-            enableAudio: false,
-          )
-          ..initialize().then((_) async {
-            await _controller.startImageStream(onLatestImageAvailable);
-            setState(() {});
+    CameraController(
+      cameras[0],
+      ResolutionPreset.medium,
+      enableAudio: false,
+    )
+      ..initialize().then((_) async {
+        await _controller.startImageStream(onLatestImageAvailable);
+        setState(() {});
 
-            /// previewSize is size of each image frame captured by controller
-            ///
-            /// 352x288 on iOS, 240p (320x240) on Android with ResolutionPreset.low
-            ScreenParams.previewSize = _controller.value.previewSize!;
-          });
+        /// previewSize is size of each image frame captured by controller
+        ///
+        /// 352x288 on iOS, 240p (320x240) on Android with ResolutionPreset.low
+        ScreenParams.previewSize = _controller.value.previewSize!;
+      });
   }
 
   @override
@@ -106,23 +106,24 @@ class _LiveDetectionScreenState extends State<LiveDetectionScreen>
     );
   }
 
-  Widget _statsWidget() => (stats != null)
-      ? Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            color: Colors.white.withAlpha(150),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: stats!.entries
-                    .map((e) => StatsWidget(e.key, e.value))
-                    .toList(),
-              ),
+  Widget _statsWidget() =>
+      (stats != null)
+          ? Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          color: Colors.white.withAlpha(150),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: stats!.entries
+                  .map((e) => StatsWidget(e.key, e.value))
+                  .toList(),
             ),
           ),
-        )
-      : const SizedBox.shrink();
+        ),
+      )
+          : const SizedBox.shrink();
 
   /// Returns Stack of bounding boxes
   Widget _boundingBoxes() {

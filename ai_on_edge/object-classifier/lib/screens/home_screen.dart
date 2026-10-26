@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     TextSpan(
                       text:
-                          'This is a simple demo of using tflite in your '
+                      'This is a simple demo of using tflite in your '
                           'flutter app.The app uses the "',
                     ),
                     TextSpan(
@@ -40,17 +40,18 @@ class HomeScreen extends StatelessWidget {
                     ),
                     TextSpan(
                       text:
-                          '" quantized model by google which detects 80 '
+                      '" quantized model by google which detects 80 '
                           'daily household objects.',
                     ),
                   ],
                 ),
               ),
               ElevatedButton(
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => LiveDetectionScreen()),
-                ),
+                onPressed: () =>
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => LiveDetectionScreen()),
+                    ),
                 child: Text('Live Detection'),
               ),
             ],

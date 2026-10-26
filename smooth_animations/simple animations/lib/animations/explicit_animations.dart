@@ -17,7 +17,8 @@ class _ExplicitAnimationState extends State<ExplicitAnimation>
     animController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
-    )..repeat(reverse: true);
+    )
+      ..repeat(reverse: true);
     animation = Tween<double>(
       begin: 1,
       end: 0,

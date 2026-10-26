@@ -81,14 +81,14 @@ class Detector {
   // // Similarly, StreamControllers are stored in a queue so they can be handled
   // // asynchronously and serially.
   final StreamController<Map<String, dynamic>> resultsStream =
-      StreamController<Map<String, dynamic>>();
+  StreamController<Map<String, dynamic>>();
 
   /// Open the database at [path] and launch the server on a background isolate..
   static Future<Detector> start() async {
     final ReceivePort receivePort = ReceivePort();
     // sendPort - To be used by service Isolate to send message to our ReceiverPort
     final Isolate isolate =
-        await Isolate.spawn(_DetectorServer._run, receivePort.sendPort);
+    await Isolate.spawn(_DetectorServer._run, receivePort.sendPort);
 
     final Detector result = Detector._(
       isolate,
@@ -208,14 +208,14 @@ class _DetectorServer {
   Future<void> _handleCommand(_Command command) async {
     switch (command.code) {
       case _Codes.init:
-        // ----------------------------------------------------------------------
-        // The [RootIsolateToken] is required for
-        // [BackgroundIsolateBinaryMessenger.ensureInitialized] and must be
-        // obtained on the root isolate and passed into the background isolate via
-        // a [SendPort].
-        // ----------------------------------------------------------------------
+      // ----------------------------------------------------------------------
+      // The [RootIsolateToken] is required for
+      // [BackgroundIsolateBinaryMessenger.ensureInitialized] and must be
+      // obtained on the root isolate and passed into the background isolate via
+      // a [SendPort].
+      // ----------------------------------------------------------------------
         RootIsolateToken rootIsolateToken =
-            command.args?[0] as RootIsolateToken;
+        command.args?[0] as RootIsolateToken;
         // ----------------------------------------------------------------------
         // [BackgroundIsolateBinaryMessenger.ensureInitialized] for each
         // background isolate that will use plugins. This sets up the
@@ -235,7 +235,9 @@ class _DetectorServer {
   }
 
   void _convertCameraImage(CameraImage cameraImage) {
-    var preConversionTime = DateTime.now().millisecondsSinceEpoch;
+    var preConversionTime = DateTime
+        .now()
+        .millisecondsSinceEpoch;
 
     convertCameraImageToImage(cameraImage).then((image) {
       if (image != null) {
@@ -249,12 +251,16 @@ class _DetectorServer {
     });
   }
 
-  Map<String, dynamic> analyseImage(
-      image_lib.Image? image, int preConversionTime) {
+  Map<String, dynamic> analyseImage(image_lib.Image? image,
+      int preConversionTime) {
     var conversionElapsedTime =
-        DateTime.now().millisecondsSinceEpoch - preConversionTime;
+        DateTime
+            .now()
+            .millisecondsSinceEpoch - preConversionTime;
 
-    var preProcessStart = DateTime.now().millisecondsSinceEpoch;
+    var preProcessStart = DateTime
+        .now()
+        .millisecondsSinceEpoch;
 
     /// Pre-process the image
     /// Resizing image for model [300, 300]
@@ -267,19 +273,24 @@ class _DetectorServer {
     // Creating matrix representation, [300, 300, 3]
     final imageMatrix = List.generate(
       imageInput.height,
-      (y) => List.generate(
-        imageInput.width,
-        (x) {
-          final pixel = imageInput.getPixel(x, y);
-          return [pixel.r, pixel.g, pixel.b];
-        },
-      ),
+          (y) =>
+          List.generate(
+            imageInput.width,
+                (x) {
+              final pixel = imageInput.getPixel(x, y);
+              return [pixel.r, pixel.g, pixel.b];
+            },
+          ),
     );
 
     var preProcessElapsedTime =
-        DateTime.now().millisecondsSinceEpoch - preProcessStart;
+        DateTime
+            .now()
+            .millisecondsSinceEpoch - preProcessStart;
 
-    var inferenceTimeStart = DateTime.now().millisecondsSinceEpoch;
+    var inferenceTimeStart = DateTime
+        .now()
+        .millisecondsSinceEpoch;
 
     final output = _runInference(imageMatrix);
 
@@ -292,12 +303,16 @@ class _DetectorServer {
         .toList();
 
     // Classes
-    final classesRaw = output.elementAt(1).first as List<double>;
+    final classesRaw = output
+        .elementAt(1)
+        .first as List<double>;
     final classes = classesRaw.map((value) => value.toInt()).toList();
-    
+
 
     // Scores
-    final scores = output.elementAt(2).first as List<double>;
+    final scores = output
+        .elementAt(2)
+        .first as List<double>;
 
     // Number of detections
     final numberOfDetectionsRaw = output.last.first as double;
@@ -305,7 +320,7 @@ class _DetectorServer {
 
     final List<String> classification = [];
     for (var i = 0; i < numberOfDetections; i++) {
-      classification.add(_labels![classes[i]+1]);
+      classification.add(_labels![classes[i] + 1]);
     }
 
     /// Generate recognitions
@@ -324,10 +339,14 @@ class _DetectorServer {
     }
 
     var inferenceElapsedTime =
-        DateTime.now().millisecondsSinceEpoch - inferenceTimeStart;
+        DateTime
+            .now()
+            .millisecondsSinceEpoch - inferenceTimeStart;
 
     var totalElapsedTime =
-        DateTime.now().millisecondsSinceEpoch - preConversionTime;
+        DateTime
+            .now()
+            .millisecondsSinceEpoch - preConversionTime;
 
     return {
       "recognitions": recognitions,
@@ -342,9 +361,7 @@ class _DetectorServer {
   }
 
   /// Object detection main function
-  List<List<Object>> _runInference(
-    List<List<List<num>>> imageMatrix,
-  ) {
+  List<List<Object>> _runInference(List<List<List<num>>> imageMatrix,) {
     // Set input tensor [1, 300, 300, 3]
     final input = [imageMatrix];
 

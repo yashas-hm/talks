@@ -8,10 +8,11 @@ class SourceScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => DestScreen()),
-          ),
+          onTap: () =>
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => DestScreen()),
+              ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +47,10 @@ class DestScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
-          width: MediaQuery.of(context).size.width,
+          width: MediaQuery
+              .of(context)
+              .size
+              .width,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,

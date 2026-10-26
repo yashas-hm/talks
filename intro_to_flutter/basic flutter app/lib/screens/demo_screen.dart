@@ -22,7 +22,10 @@ class DemoStateless extends StatelessWidget {
             const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headlineMedium,
             ),
           ],
         ),
@@ -61,15 +64,19 @@ class _DemoStatefulState extends State<DemoStateful> {
         title: Text(widget.title),
         actions: [
           IconButton(
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const JokeGeneratorScreen(),
-              ),
-            ),
+            onPressed: () =>
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const JokeGeneratorScreen(),
+                  ),
+                ),
             icon: Icon(
               Icons.near_me,
-              color: Theme.of(context).colorScheme.tertiary,
+              color: Theme
+                  .of(context)
+                  .colorScheme
+                  .tertiary,
             ),
           ),
         ],
@@ -81,7 +88,10 @@ class _DemoStatefulState extends State<DemoStateful> {
             const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headlineMedium,
             ),
           ],
         ),

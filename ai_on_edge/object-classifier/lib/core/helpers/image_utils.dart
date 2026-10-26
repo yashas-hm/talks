@@ -170,11 +170,9 @@ image_lib.Image applyExifRotation(image_lib.Image image, int exifRotation) {
   return image;
 }
 
-Future<void> saveImage(
-    image_lib.Image image,
+Future<void> saveImage(image_lib.Image image,
     String path,
-    String name,
-    ) async {
+    String name,) async {
   Uint8List bytes = image_lib.encodeJpg(image);
   final fileOnDevice = File('$path/$name.jpg');
   await fileOnDevice.writeAsBytes(bytes, flush: true);
